@@ -1,0 +1,982 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- 
+    - primary meta tags
+  -->
+  <title>Dnyanesh Agale - Software Developer Portfolio</title>
+  <meta name="title" content="Dnyanesh Agale Portfolio">
+  <meta name="description" content="Portfolio of Dnyanesh Agale - Software Developer with expertise in Java Backend Development">
+
+  <!-- 
+    - favicon
+  -->
+  <link rel="shortcut icon" href="./favicon.png" type="image/svg+xml">
+
+  <!-- 
+    - google font link
+  -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;700&display=swap" rel="stylesheet">
+
+  <!-- 
+    - custom css link
+  -->
+  <link rel="stylesheet" href="./assets/css/style.css">
+
+  <!-- 
+    - preload images
+  -->
+  <link rel="preload" as="image" href="./assets/images/hero-banner.png">
+  <link rel="preload" as="image" href="./assets/images/Blog.svg">
+
+  <style>
+    /* Tech stack section styles */
+    .tech-stack {
+      background-color: var(--cultured);
+      padding-block: var(--section-padding);
+    }
+
+    .tech-stack-container {
+      display: grid;
+      gap: 40px;
+    }
+
+    .tech-category {
+      background-color: var(--white);
+      border-radius: var(--radius-8);
+      padding: 30px;
+      box-shadow: var(--shadow-1);
+      transition: transform 0.3s ease;
+    }
+
+    .tech-category:hover {
+      transform: translateY(-5px);
+    }
+
+    .tech-category-title {
+      font-size: var(--fs-4);
+      color: var(--charcoal);
+      margin-bottom: 20px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .tech-category-title ion-icon {
+      font-size: 24px;
+      color: var(--cinnamon-satin);
+    }
+
+    .tech-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 15px;
+    }
+
+    .tech-item {
+      background-color: var(--raisin-black_a6);
+      color: var(--charcoal);
+      padding: 8px 16px;
+      border-radius: var(--radius-pill);
+      font-size: var(--fs-7);
+      font-weight: var(--fw-700);
+      transition: var(--transition-1);
+    }
+
+    .tech-item:hover {
+      background-color: var(--cinnamon-satin);
+      color: var(--white);
+      transform: translateY(-3px);
+    }
+
+    /* Education section styles */
+    .education {
+      padding-block: var(--section-padding);
+    }
+
+    .education-container {
+      display: grid;
+      gap: 40px;
+    }
+
+    .education-card {
+      background-color: var(--white);
+      border-radius: var(--radius-8);
+      padding: 30px;
+      box-shadow: var(--shadow-1);
+      transition: transform 0.3s ease;
+    }
+
+    .education-card:hover {
+      transform: translateY(-5px);
+    }
+
+    .education-card-title {
+      font-size: var(--fs-4);
+      color: var(--charcoal);
+      margin-bottom: 15px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .education-card-title ion-icon {
+      font-size: 24px;
+      color: var(--cinnamon-satin);
+    }
+
+    .education-institute {
+      font-size: var(--fs-5);
+      color: var(--black-coral);
+      margin-bottom: 15px;
+      font-weight: var(--fw-700);
+    }
+
+    .education-year {
+      font-size: var(--fs-7);
+      color: var(--manatee);
+      margin-bottom: 20px;
+      display: inline-block;
+      padding: 4px 12px;
+      background-color: var(--raisin-black_a6);
+      border-radius: var(--radius-pill);
+    }
+
+    .education-courses-title {
+      font-size: var(--fs-6);
+      color: var(--charcoal);
+      margin-bottom: 12px;
+    }
+
+    .education-courses-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .education-course-item {
+      background-color: var(--raisin-black_a6);
+      color: var(--charcoal);
+      padding: 6px 14px;
+      border-radius: var(--radius-pill);
+      font-size: var(--fs-7);
+      transition: var(--transition-1);
+    }
+
+    .education-course-item:hover {
+      background-color: var(--cinnamon-satin);
+      color: var(--white);
+    }
+
+    /* Resume download button styles */
+    .download-resume-btn {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      background-color: var(--cinnamon-satin);
+      color: var(--white);
+      font-size: var(--fs-6);
+      font-weight: var(--fw-700);
+      padding: 12px 24px;
+      border-radius: var(--radius-pill);
+      margin-top: 20px;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .download-resume-btn:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+    }
+
+    .download-resume-btn ion-icon {
+      font-size: 20px;
+    }
+
+    /* Footer contact info styles */
+    .footer-contact {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-bottom: 15px;
+    }
+
+    .footer-contact-item {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 8px;
+      color: var(--black-coral);
+      font-size: var(--fs-7);
+      transition: color 0.3s ease;
+    }
+
+    .footer-contact-item:hover {
+      color: var(--cinnamon-satin);
+    }
+
+    .footer-contact-item ion-icon {
+      font-size: 18px;
+    }
+
+    @media (min-width: 768px) {
+      .tech-stack-container {
+        grid-template-columns: 1fr 1fr;
+      }
+      
+      .education-container {
+        grid-template-columns: 1fr;
+      }
+
+      .footer-contact {
+        flex-direction: row;
+        justify-content: center;
+        gap: 20px;
+      }
+    }
+
+    @media (min-width: 992px) {
+      .tech-stack-container {
+        grid-template-columns: repeat(3, 1fr);
+      }
+      
+      .education-container {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+  </style>
+
+</head>
+
+<body>
+
+  <!-- 
+    - #HEADER
+  -->
+
+  <header class="header" data-header>
+    <div class="container">
+
+      <a href="#" class="logo">
+        <img src="./assets/images/logo-dark.png" width="100" height="30" alt="Dnyanesh home">
+      </a>
+
+      <nav class="navbar" data-navbar>
+
+        <div class="navbar-top">
+          <a href="#" class="logo">
+            <img src="./assets/images/logo-light.png" width="100" height="30" alt="Dnyanesh home">
+          </a>
+
+          <button class="nav-close-btn" aria-label="close menu" data-nav-toggler>
+            <ion-icon name="close-outline" aria-hidden="true"></ion-icon>
+          </button>
+        </div>
+
+        <ul class="navbar-list">
+
+          <li>
+            <a href="#" class="navbar-link">Home</a>
+          </li>
+
+          <li>
+            <a href="#about" class="navbar-link">About</a>
+          </li>
+
+          <li>
+            <a href="#education" class="navbar-link">Education</a>
+          </li>
+
+          <li>
+            <a href="#tech-stack" class="navbar-link">Tech Stack</a>
+          </li>
+
+          <li>
+            <a href="#projects" class="navbar-link">Projects</a>
+          </li>
+
+          <li>
+            <a href="#contact" class="navbar-link">Contact</a>
+          </li>
+
+        </ul>
+
+        <div class="wrapper">
+          <a href="mailto:dnyanesh.portfolio@gmail.com" class="contact-link">dnyanesh.portfolio@gmail.com</a>
+        </div>
+
+        <ul class="social-list">
+
+          <li>
+            <a href="https://github.com/dnyaneshagale" class="social-link" target="_blank">
+              <ion-icon name="logo-github"></ion-icon>
+            </a>
+          </li>
+
+          <li>
+            <a href="https://www.linkedin.com/in/dnyanesh-agale" class="social-link" target="_blank">
+              <ion-icon name="logo-linkedin"></ion-icon>
+            </a>
+          </li>
+
+          <li>
+            <a href="https://www.leetcode.com/dnyaneshagale" class="social-link" target="_blank">
+              <img src="./assets/images/leetcode-logo.png" alt="LeetCode" width="22" height="22">
+            </a>
+          </li>
+
+
+        </ul>
+
+      </nav>
+
+      <button class="nav-open-btn" aria-label="open menu" data-nav-toggler>
+        <ion-icon name="menu-outline" aria-hidden="true"></ion-icon>
+      </button>
+
+      <div class="overlay" data-nav-toggler data-overlay></div>
+
+    </div>
+  </header>
+
+
+
+
+
+  <main>
+    <article>
+
+      <!-- 
+        - #HERO
+      -->
+
+      <section class="section hero" aria-label="home">
+        <div class="container">
+
+          <figure class="hero-banner">
+            <img src="./assets/images/hero-banner.png" width="560" height="540" alt="Dnyanesh Agale" class="w-100"
+              data-reveal="top">
+
+            <!-- <img src="./assets/images/hero-shape.svg" width="203" height="91" alt="Software Developer" class="shape"
+              data-reveal="top" data-reveal-delay="0.25s"> -->
+          </figure>
+
+          <div class="hero-content">
+
+            <h1 class="h1 hero-title" data-reveal="top" data-reveal-delay="0.5s">
+              I'm Dnyanesh Agale, Java Backend Developer.
+            </h1>
+
+            <p class="section-text" data-reveal="top" data-reveal-delay="0.75s">
+              Hello! I'm a Java Backend Developer specializing in Spring Boot. I'm passionate about building scalable, efficient, and user-friendly backend systems that power modern web applications.
+            </p>
+
+            <div class="btn-wrapper" data-reveal="top" data-reveal-delay="1s">
+              <a href="#projects" class="btn btn-primary">See My Projects</a>
+
+              <a href="#contact" class="btn btn-secondary">Contact Me</a>
+              
+              <a href="./assets/files/DNYANESH_AGALE_RESUME.pdf" class="download-resume-btn" download data-reveal="top" data-reveal-delay="1.25s">
+                <ion-icon name="download-outline"></ion-icon>
+                Download Resume
+              </a>
+            </div>
+
+          </div>
+
+        </div>
+      </section>
+
+
+
+
+
+      <!-- 
+        - #ABOUT
+      -->
+
+      <section class="section about" id="about" aria-label="about">
+        <div class="container">
+
+          <div class="wrapper">
+
+            <div data-reveal="left">
+              <h2 class="h2 section-title">What I Do?</h2>
+
+              <p class="section-text">
+                I design and build backend systems using Java and Spring Boot. I create applications that are scalable, efficient, and user-friendly, with a strong focus on solving real-world problems and making them easy to maintain.
+              </p>
+            </div>
+
+            <ul class="progress-list" data-reveal="right">
+
+              <li class="progress-item">
+
+                <div class="label-wrapper">
+                  <p>Backend Development (Spring Boot, REST APIs)</p>
+
+                  <span class="span">90 %</span>
+                </div>
+
+                <div class="progress">
+                  <div class="progress-fill" style="width: 90%; background-color: #c7b1dd"></div>
+                </div>
+
+              </li>
+
+              <li class="progress-item">
+
+                <div class="label-wrapper">
+                  <p>Programming & Algorithms (Java, OOP, Problem Solving)</p>
+
+                  <span class="span">85 %</span>
+                </div>
+
+                <div class="progress">
+                  <div class="progress-fill" style="width: 85%; background-color: #8caeec"></div>
+                </div>
+
+              </li>
+
+              <li class="progress-item">
+
+                <div class="label-wrapper">
+                  <p>Database Management (SQL, JPA/Hibernate, Optimization)</p>
+
+                  <span class="span">80 %</span>
+                </div>
+
+                <div class="progress">
+                  <div class="progress-fill" style="width: 80%; background-color: #b0d4c1"></div>
+                </div>
+
+              </li>
+
+              <li class="progress-item">
+
+                <div class="label-wrapper">
+                  <p>Application Security & Best Practices</p>
+
+                  <span class="span">95 %</span>
+                </div>
+
+                <div class="progress">
+                  <div class="progress-fill" style="width: 95%; background-color: #e3a6b6"></div>
+                </div>
+
+              </li>
+
+            </ul>
+
+          </div>
+
+          <ul class="grid-list">
+
+            <li data-reveal="bottom">
+              <div class="about-card">
+
+                <div class="card-icon">
+                  <img src="./assets/images/icon-1.svg" width="52" height="52" loading="lazy" alt="web design icon">
+                </div>
+
+                <h3 class="h4 card-title">Backend Development</h3>
+
+                <p class="card-text">
+                  Building robust and scalable backend systems using Java and Spring Boot. Focused on creating efficient RESTful APIs, handling business logic, and ensuring seamless integration with databases and external services.
+                </p>
+
+              </div>
+            </li>
+
+            <li data-reveal="bottom" data-reveal-delay="0.25s">
+              <div class="about-card">
+
+                <div class="card-icon">
+                  <img src="./assets/images/icon-2.svg" width="52" height="52" loading="lazy" alt="software development icon">
+                </div>
+
+                <h3 class="h4 card-title">Software Development</h3>
+
+                <p class="card-text">
+                  Developing maintainable, secure, and high-performance backend solutions that solve complex real-world problems and support scalable applications.
+                </p>
+
+              </div>
+            </li>
+
+            <li data-reveal="bottom" data-reveal-delay="0.5s">
+              <div class="about-card">
+
+                <div class="card-icon">
+                  <img src="./assets/images/icon-3.svg" width="52" height="52" loading="lazy"
+                    alt="database management icon">
+                </div>
+
+                <h3 class="h4 card-title">Database Management</h3>
+
+                <p class="card-text">
+                  Designing and managing relational and non-relational databases, ensuring data integrity, security, and optimal performance for backend systems.
+                </p>
+
+              </div>
+            </li>
+
+            <li data-reveal="bottom" data-reveal-delay="0.75s">
+              <div class="about-card">
+
+                <div class="card-icon">
+                  <img src="./assets/images/icon-4.svg" width="52" height="52" loading="lazy" alt="problem solving icon">
+                </div>
+
+                <h3 class="h4 card-title">Problem Solving</h3>
+
+                <p class="card-text">
+                  Analyzing complex technical challenges and crafting efficient, reliable, and innovative solutions using strong programming and logical thinking skills.
+                </p>
+
+              </div>
+            </li>
+
+          </ul>
+
+        </div>
+      </section>
+
+
+      <!-- 
+        - #EDUCATION
+      -->
+
+      <section class="section education" id="education" aria-labelledby="education-label">
+        <div class="container">
+          
+          <h2 class="h2 section-title" id="education-label" data-reveal="top">Education & Certifications</h2>
+          
+          <p class="section-text" data-reveal="top" data-reveal-delay="0.25s">
+            My academic background and professional certifications that have shaped my technical expertise
+          </p>
+
+          <div class="education-container">
+            
+            <div class="education-card" data-reveal="bottom">
+              <h3 class="education-card-title">
+                <ion-icon name="school-outline"></ion-icon>
+                Bachelor of Engineering in E & TC
+              </h3>
+              <p class="education-institute">University of Pune</p>
+              <span class="education-year">2023 - 2027</span>
+              
+              <h4 class="education-courses-title">Relevant Coursework:</h4>
+              <div class="education-courses-list">
+                <span class="education-course-item">Data Structures & Algorithms</span>
+                <span class="education-course-item">Object-Oriented Programming</span>
+                <span class="education-course-item">Database Management</span>
+                <span class="education-course-item">Computer Networks</span>
+                <span class="education-course-item">Java Programming</span>
+              </div>
+            </div>
+
+            <div class="education-card" data-reveal="bottom" data-reveal-delay="0.25s">
+              <h3 class="education-card-title">
+                <ion-icon name="ribbon-outline"></ion-icon>
+                Java, Spring 6 and Spring Boot 3 , Spring JPA, Security with Telusko
+              </h3>
+              <p class="education-institute">Udemy</p>
+              <span class="education-year">2025</span>
+              
+              <h4 class="education-courses-title">Topics Covered:</h4>
+              <div class="education-courses-list">
+                <span class="education-course-item">Spring Core</span>
+                <span class="education-course-item">Spring Boot</span>
+                <span class="education-course-item">Spring Data JPA</span>
+                <span class="education-course-item">Spring Security</span>
+                <span class="education-course-item">Spring Web MVC</span>
+                <span class="education-course-item">Spring Cloud</span>
+              </div>
+            </div>
+
+            <div class="education-card" data-reveal="bottom">
+              <h3 class="education-card-title">
+                <ion-icon name="ribbon-outline"></ion-icon>
+                Programming in Java
+              </h3>
+              <p class="education-institute">NPTEL IIT Kharagpur</p>
+              <span class="education-year">2025</span>
+              
+              <h4 class="education-courses-title">Relevant Coursework:</h4>
+              <div class="education-courses-list">
+                <span class="education-course-item">Core Java</span>
+                <span class="education-course-item">Java Networking</span>
+                <span class="education-course-item">Database handling with JDBC</span>
+                <span class="education-course-item">Exception handling</span>
+                <span class="education-course-item">Multithreading</span>
+                <span class="education-course-item">Java OOP Concepts</span>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+      </section>
+
+
+
+      <!-- 
+        - #TECH STACK
+      -->
+
+      <section class="section tech-stack" id="tech-stack" aria-labelledby="tech-stack-label">
+        <div class="container">
+          
+          <h2 class="h2 section-title" id="tech-stack-label" data-reveal="top">My Tech Stack</h2>
+          
+          <p class="section-text" data-reveal="top" data-reveal-delay="0.25s">
+            The technologies, languages, frameworks, and tools that I use to bring ideas to life
+          </p>
+
+          <div class="tech-stack-container">
+            
+            <div class="tech-category" data-reveal="bottom" data-reveal-delay="0.3s">
+              <h3 class="tech-category-title">
+                <ion-icon name="code-slash-outline"></ion-icon>
+                Programming Languages
+              </h3>
+              <div class="tech-list">
+                <span class="tech-item">Java</span>
+                <span class="tech-item">C</span>
+                <span class="tech-item">C++</span>
+                <span class="tech-item">Python</span>
+              </div>
+            </div>
+
+            <div class="tech-category" data-reveal="bottom" data-reveal-delay="0.45s">
+              <h3 class="tech-category-title">
+                <ion-icon name="layers-outline"></ion-icon>
+                Frameworks & Libraries
+              </h3>
+              <div class="tech-list">
+                <span class="tech-item">Spring Boot</span>
+                <span class="tech-item">Spring MVC</span>
+                <span class="tech-item">Spring Security</span>
+                <span class="tech-item">Spring Data JPA</span>
+                <span class="tech-item">Hibernate</span>
+              </div>
+            </div>
+
+            <div class="tech-category" data-reveal="bottom" data-reveal-delay="0.6s">
+              <h3 class="tech-category-title">
+                <ion-icon name="server-outline"></ion-icon>
+                Databases
+              </h3>
+              <div class="tech-list">
+                <span class="tech-item">MySQL</span>
+                <span class="tech-item">PostgreSQL</span>
+                <span class="tech-item">Cloudflare R2</span>
+                <span class="tech-item">MongoDB</span>
+              </div>
+            </div>
+
+            <div class="tech-category" data-reveal="bottom" data-reveal-delay="0.75s">
+              <h3 class="tech-category-title">
+                <ion-icon name="cloud-outline"></ion-icon>
+                Cloud & DevOps
+              </h3>
+              <div class="tech-list">
+                <span class="tech-item">AWS</span>
+                <span class="tech-item">Docker</span>
+                <span class="tech-item">GitHub Actions</span>
+              </div>
+            </div>
+
+            <div class="tech-category" data-reveal="bottom" data-reveal-delay="0.9s">
+              <h3 class="tech-category-title">
+                <ion-icon name="hammer-outline"></ion-icon>
+                Tools & Utilities
+              </h3>
+              <div class="tech-list">
+                <span class="tech-item">Git</span>
+                <span class="tech-item">IntelliJ IDEA</span>
+                <span class="tech-item">VS Code</span>
+                <span class="tech-item">Postman</span>
+                <span class="tech-item">Maven</span>
+                <span class="tech-item">Gradle</span>
+              </div>
+            </div>
+
+            <div class="tech-category" data-reveal="bottom" data-reveal-delay="1.05s">
+              <h3 class="tech-category-title">
+                <ion-icon name="shield-checkmark-outline"></ion-icon>
+                Security & Best Practices
+              </h3>
+              <div class="tech-list">
+                <span class="tech-item">JWT</span>
+                <span class="tech-item">OAuth 2.0</span>
+                <span class="tech-item">HTTPS</span>
+                <span class="tech-item">Clean Code</span>
+                <span class="tech-item">Design Patterns</span>
+                <span class="tech-item">RESTful APIs</span>
+              </div>
+            </div>
+
+            <div class="tech-category" data-reveal="bottom" data-reveal-delay="1.2s">
+              <h3 class="tech-category-title">
+                <ion-icon name="extension-puzzle-outline"></ion-icon>
+                Additional Expertise
+              </h3>
+              <div class="tech-list">
+                <span class="tech-item">Data Structures & Algorithms</span>
+                <span class="tech-item">Computer Networks</span>
+                <span class="tech-item">Operating System</span>
+                <span class="tech-item">Object Oriented Programming</span>
+                <span class="tech-item">Database Management</span>
+                <span class="tech-item">Cybersecurity</span>
+                <span class="tech-item">Hardware Knowledge</span>
+              </div>
+            </div>
+
+
+          </div>
+
+        </div>
+      </section>
+
+
+
+
+
+      <!-- 
+        - #PROJECT
+      -->
+
+      <section class="section project" id="projects" aria-labelledby="project-label">
+        <div class="container">
+
+          <div class="title-wrapper" data-reveal="top">
+
+            <div>
+              <h2 class="h2 section-title" id="project-label">Latest Projects</h2>
+
+              <p class="section-text">
+                Check out some of my latest projects that showcase my skills and expertise.
+              </p>
+            </div>
+
+            <a href="https://github.com/dnyaneshagale" class="btn btn-secondary" target="_blank">See All Projects</a>
+
+          </div>
+
+          <ul class="grid-list">
+
+            <li>
+              <div class="project-card project-card-1" style="background-color: #f8f5fb">
+
+                <div class="card-content" data-reveal="left">
+
+                  <p class="card-tag" style="color: #a07cc5">Web Application</p>
+
+                  <h3 class="h3 card-title">Inventory Management System</h3>
+
+                  <p class="card-text">
+                    A Java Spring Boot backend for managing inventory, warehouses, suppliers, and purchase orders with secure, scalable, and efficient operations.
+                  </p>
+
+                  <a href="https://github.com/dnyaneshagale/inventory-management-system" class="btn-text" style="color: #a07cc5" target="_blank">
+                    <span class="span">See Project</span>
+
+                    <ion-icon name="arrow-forward-outline" aria-hidden="true"></ion-icon>
+                  </a>
+
+                </div>
+
+                <figure class="card-banner" data-reveal="right">
+                  <img src="./assets/images/project-1.png" width="650" height="370" loading="lazy" alt="Inventory Management System"
+                    class="w-100">
+                </figure>
+
+              </div>
+            </li>
+
+            <li>
+              <div class="project-card project-card-2" style="background-color: #f1f5fd">
+
+                <div class="card-content" data-reveal="right">
+
+                  <p class=" card-tag" style="color: #3f78e0">Software Application</p>
+
+                  <h3 class="h3 card-title">Video Processor</h3>
+
+                  <p class="card-text">
+                    A Java Spring Boot backend that converts videos to HLS format with adaptive streaming. Features include REST APIs for video submission, processing queue management, Cloudflare R2 storage integration, and secure JWT-based authentication for efficient, scalable video processing.
+                  </p>
+
+                  <a href="https://github.com/dnyaneshagale/videoprocessor" class="btn-text" style="color: #3f78e0" target="_blank">
+                    <span class="span">See Project</span>
+
+                    <ion-icon name="arrow-forward-outline" aria-hidden="true"></ion-icon>
+                  </a>
+
+                </div>
+
+                <figure class="card-banner" data-reveal="left">
+                  <img src="./assets/images/project-2.png" width="600" height="367" loading="lazy" alt="Video Processor"
+                    class="w-100">
+                </figure>
+
+              </div>
+            </li>
+
+            <li>
+              <div class="project-card project-card-3" style="background-color: #f5faf7">
+
+                <div class="card-content" data-reveal="left">
+
+                  <p class=" card-tag" style="color: #7cb798">Web Application</p>
+
+                  <h3 class="h3 card-title">College Event Management System</h3>
+
+                  <p class="card-text">
+                    A Java Spring Boot backend for managing college events with role-based access control. Features include event creation and registration, user management, feedback collection, CSV export, and secure JWT authentication for admins, faculty, and students.
+                  </p>
+
+                  <a href="https://github.com/dnyaneshagale/collegeeventmgmt" class="btn-text" style="color: #7cb798" target="_blank">
+                    <span class="span">See Project</span>
+
+                    <ion-icon name="arrow-forward-outline" aria-hidden="true"></ion-icon>
+                  </a>
+
+                </div>
+
+                <figure class="card-banner" data-reveal="right">
+                  <img src="./assets/images/project-3.png" width="600" height="367" loading="lazy" alt="College Event Management"
+                    class="w-100">
+                </figure>
+
+              </div>
+            </li>
+
+          </ul>
+
+        </div>
+      </section>
+
+
+
+
+
+      <!-- 
+        - #CONTACT
+      -->
+
+      <section class="section contact" id="contact" aria-label="contact">
+        <div class="container">
+
+          <div class="contact-card">
+
+            <div class="contact-content" data-reveal="left">
+
+              <div class="card-icon">
+                <img src="./assets/images/icon-5.svg" width="44" height="44" loading="lazy" alt="envelop icon">
+              </div>
+
+              <h2 class="h2 section-title">If you like what you see, let's work together.</h2>
+
+              <p class="section-text">
+                I'm always looking for new opportunities and collaborations. Have a project in mind or want to discuss potential opportunities? Reach out to me from this contact form and I'll get back to you shortly.
+              </p>
+
+              <div class="wrapper" style="margin-top: 20px;">
+                <a href="mailto:dnyanesh.portfolio@gmail.com" class="contact-link" style="display: flex; align-items: center; gap: 8px;">
+                  <ion-icon name="mail-outline"></ion-icon>
+                  dnyanesh.portfolio@gmail.com
+                </a>
+              </div>
+
+            </div>
+
+            <form action="https://formspree.io/f/meolzokp" method="POST" class="contact-form" data-reveal="right">
+
+              <div class="input-wrapper">
+                <input type="text" name="name" placeholder="Name *" required class="input-field">
+              
+                <input type="email" name="email" placeholder="Email *" required class="input-field">
+              </div>
+            
+              <textarea name="message" placeholder="Message *" required class="input-field"></textarea>
+            
+              <button type="submit" class="btn btn-secondary">Send message</button>
+
+            </form>
+
+          </div>
+
+        </div>
+      </section>
+
+    </article>
+  </main>
+
+
+
+
+
+  <!-- 
+    - #FOOTER
+  -->
+
+  <footer class="footer">
+    <div class="container">
+
+      <p class="copyright">
+        © 2025 Dnyanesh Agale. All rights reserved. Last updated: 2025-09-01 07:13:00
+      </p>
+
+      <ul class="social-list">
+
+        <li>
+          <a href="https://github.com/dnyaneshagale" class="social-link" target="_blank">
+            <ion-icon name="logo-github"></ion-icon>
+          </a>
+        </li>
+
+        <li>
+          <a href="https://www.linkedin.com/in/dnyanesh-agale" class="social-link" target="_blank">
+            <ion-icon name="logo-linkedin"></ion-icon>
+          </a>
+        </li>
+
+        <li>
+          <a href="https://www.leetcode.com/dnyaneshagale" class="social-link" target="_blank">
+            <img src="./assets/images/leetcode-logo.png" alt="LeetCode" width="22" height="22">
+          </a>
+        </li>
+
+      </ul>
+
+    </div>
+  </footer>
+
+
+
+
+
+  <!-- 
+    - custom js link
+  -->
+  <script src="./assets/js/script.js"></script>
+
+  <!-- 
+    - ionicon link
+  -->
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+</body>
+
+</html>
